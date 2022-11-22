@@ -17,7 +17,7 @@ namespace InputCollector
         private static int _dbBatchSize = Constants.DefaultDababaseBufferSize;
         private static Mode _mode = Mode.C;
         private static InputTypeMode _type = InputTypeMode.B;
-        private static string[] _debugArgs = new string[] { "-m", "C", "-t", "B" };
+        private static string[] _debugArgs = new string[] { "-m", "R", "-t", "B" };
 
         private static bool _parsingOk = true;
 

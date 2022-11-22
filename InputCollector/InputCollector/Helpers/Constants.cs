@@ -140,5 +140,13 @@ namespace InputCollector.Helpers
                 return 100;
             }
         }
+
+        public static double DefaultSubstractedMilliseconds
+        {
+            get
+            {
+                return 0.1;
+            }
+        }
     }
 }

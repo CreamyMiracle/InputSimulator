@@ -74,3 +74,5 @@ D:\Dev\InputCollector\InputCollector\InputCollector\obj\Debug\net6.0\InputCollec
 D:\Dev\InputCollector\InputCollector\InputCollector\obj\Debug\net6.0\ref\InputCollector.dll
 D:\Dev\InputCollector\InputCollector\InputCollector\obj\Debug\net6.0\InputCollector.pdb
 D:\Dev\InputCollector\InputCollector\InputCollector\obj\Debug\net6.0\InputCollector.genruntimeconfig.cache
+F:\Dev\InputCollector\InputCollector\InputCollector\bin\Debug\net6.0\KeystrokeAPI.dll
+F:\Dev\InputCollector\InputCollector\InputCollector\obj\Debug\net6.0\InputCollector.csproj.AssemblyReference.cache

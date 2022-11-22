@@ -122,7 +122,6 @@ namespace InputCollector
             keyboardEventSaveBatch.AddRange(keyboardEventMidSaveBatch);
             SaveMouseEventBatch().Wait();
             SaveKeyboardEventBatch().Wait();
-            Console.WriteLine("Byee");
         }
         #endregion
 

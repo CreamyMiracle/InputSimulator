@@ -1,20 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "WKVXDfsFVtX38sQ4HcKJnosiuJXgM+ESUqH9clnMHbOfVeYrhoy0+/COcvz/PHjBcbeYuax6sFsNs+Qil5ayqA==",
+  "dgSpecHash": "h7hRJoD51OOuPFiY9phjKvFB21M9i9LaFudmAhl4iFWurV7HtBh7vnnRERalkshw5aPpJHZJjEkUe/+Hp9IlEA==",
   "success": true,
-  "projectFilePath": "D:\\Dev\\InputCollector\\InputCollector\\InputCollector\\InputCollector.csproj",
+  "projectFilePath": "F:\\Dev\\InputCollector\\InputCollector\\InputCollector\\InputCollector.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\JuhanaR\\.nuget\\packages\\fluentcommandlineparser\\1.4.3\\fluentcommandlineparser.1.4.3.nupkg.sha512",
-    "C:\\Users\\JuhanaR\\.nuget\\packages\\keystrokeapi\\1.0.6.4\\keystrokeapi.1.0.6.4.nupkg.sha512",
-    "C:\\Users\\JuhanaR\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
-    "C:\\Users\\JuhanaR\\.nuget\\packages\\sqlite-net-pcl\\1.8.116\\sqlite-net-pcl.1.8.116.nupkg.sha512",
-    "C:\\Users\\JuhanaR\\.nuget\\packages\\sqlitenetextensions\\2.1.0\\sqlitenetextensions.2.1.0.nupkg.sha512",
-    "C:\\Users\\JuhanaR\\.nuget\\packages\\sqlitenetextensions.async\\2.1.0\\sqlitenetextensions.async.2.1.0.nupkg.sha512",
-    "C:\\Users\\JuhanaR\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.4\\sqlitepclraw.bundle_green.2.0.4.nupkg.sha512",
-    "C:\\Users\\JuhanaR\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
-    "C:\\Users\\JuhanaR\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.4\\sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",
-    "C:\\Users\\JuhanaR\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.4\\sqlitepclraw.provider.dynamic_cdecl.2.0.4.nupkg.sha512",
-    "C:\\Users\\JuhanaR\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+    "C:\\Users\\Rajala\\.nuget\\packages\\fluentcommandlineparser\\1.4.3\\fluentcommandlineparser.1.4.3.nupkg.sha512",
+    "C:\\Users\\Rajala\\.nuget\\packages\\keystrokeapi\\1.0.6.4\\keystrokeapi.1.0.6.4.nupkg.sha512",
+    "C:\\Users\\Rajala\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Rajala\\.nuget\\packages\\sqlite-net-pcl\\1.8.116\\sqlite-net-pcl.1.8.116.nupkg.sha512",
+    "C:\\Users\\Rajala\\.nuget\\packages\\sqlitenetextensions\\2.1.0\\sqlitenetextensions.2.1.0.nupkg.sha512",
+    "C:\\Users\\Rajala\\.nuget\\packages\\sqlitenetextensions.async\\2.1.0\\sqlitenetextensions.async.2.1.0.nupkg.sha512",
+    "C:\\Users\\Rajala\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.4\\sqlitepclraw.bundle_green.2.0.4.nupkg.sha512",
+    "C:\\Users\\Rajala\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
+    "C:\\Users\\Rajala\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.4\\sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",
+    "C:\\Users\\Rajala\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.4\\sqlitepclraw.provider.dynamic_cdecl.2.0.4.nupkg.sha512",
+    "C:\\Users\\Rajala\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
   ],
   "logs": [
     {

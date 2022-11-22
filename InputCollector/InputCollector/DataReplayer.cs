@@ -47,17 +47,19 @@ namespace InputCollector
         public async Task ReplayEvents()
         {
             List<InputEvent> orderedEvents = AllEvents.OrderBy(e => e.Timestamp).ToList();
-            DateTime prev = DateTime.MinValue;
+            DateTime prevEventTime = DateTime.MinValue;
+            DateTime loopTime = DateTime.UtcNow;
 
             foreach (InputEvent input in orderedEvents)
             {
+                loopTime = DateTime.UtcNow;
                 if (input is MouseEvent)
                 {
                     MouseEvent mEvent = input as MouseEvent;
                     InputType _type = InputType.Mouse;
                     MouseInput _mi = new MouseInput();
                     _mi.dwFlags = (uint)Constants.ConvertMouseEventFlag(mEvent);
-                    _mi.dwExtraInfo = Win32API.GetMessageExtraInfo();
+                    _mi.dwExtraInfo = IntPtr.Zero;
                     _mi.mouseData = (uint)mEvent.Delta;
 
                     if (mEvent.Action == MouseAction.Move)
@@ -80,17 +82,22 @@ namespace InputCollector
                     Win32API.SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(Input)));
                 }
 
-                if (prev == DateTime.MinValue)
+                if (prevEventTime == DateTime.MinValue)
                 {
-                    prev = input.Timestamp;
+                    prevEventTime = input.Timestamp;
                     continue;
                 }
 
-                TimeSpan diff = input.Timestamp - prev;
+                TimeSpan eventDiff = input.Timestamp - prevEventTime;
+                prevEventTime = input.Timestamp;
 
-                prev = input.Timestamp;
+                TimeSpan loopSpan = DateTime.UtcNow - loopTime;
 
-                await Task.Delay(diff);
+                TimeSpan wait = eventDiff - loopSpan;
+                wait = wait - TimeSpan.FromMilliseconds(Constants.DefaultSubstractedMilliseconds);
+                wait = (wait < TimeSpan.Zero) ? TimeSpan.Zero : wait;
+
+                await Task.Delay(wait);
             }
         }
 
@@ -109,10 +116,13 @@ namespace InputCollector
                     {
                         ki = new KeyboardInput()
                         {
-                            wVk = 0,
-                            wScan = (ushort)Win32API.MapVirtualKey((uint)vk, 0),
-                            dwFlags = (uint)(eventType | KeyEventType.Scancode),
-                            dwExtraInfo = Win32API.GetMessageExtraInfo()
+                            wVk = (ushort)vk,
+                            dwFlags = (uint)eventType,
+                            dwExtraInfo = IntPtr.Zero
+                            //wVk = 0,
+                            //wScan = (ushort)Win32API.MapVirtualKey((uint)vk, 0),
+                            //dwFlags = (uint)(eventType | KeyEventType.Scancode),
+                            //dwExtraInfo = Win32API.GetMessageExtraInfo()
                         }
                     },
                     type = 1
