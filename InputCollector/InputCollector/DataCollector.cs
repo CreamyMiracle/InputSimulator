@@ -1,10 +1,12 @@
 ﻿using InputCollector.Model;
 using SQLite;
+using SQLiteNetExtensionsAsync.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using static InputCollector.Helpers.Constants;
 
@@ -85,6 +87,11 @@ namespace InputCollector
 
         private async Task SaveKeyboardEventBatch()
         {
+            foreach(KeyboardEvent e in keyboardEventSaveBatch)
+            {
+                e.VirtualKeyCodesBlob = JsonSerializer.Serialize(e.VirtualKeyCodes);
+            }
+
             await db_async.InsertAllAsync(keyboardEventSaveBatch);
             totalEventsSaved += keyboardEventSaveBatch.Count;
             keyboardEventSaveBatch.Clear();
@@ -115,6 +122,7 @@ namespace InputCollector
             keyboardEventSaveBatch.AddRange(keyboardEventMidSaveBatch);
             SaveMouseEventBatch().Wait();
             SaveKeyboardEventBatch().Wait();
+            Console.WriteLine("Byee");
         }
         #endregion
 

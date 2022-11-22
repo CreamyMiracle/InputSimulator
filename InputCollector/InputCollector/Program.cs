@@ -37,7 +37,9 @@ namespace InputCollector
         [STAThread]
         static void Main(string[] args)
         {
-            foreach(string i in args)
+            AppDomain.CurrentDomain.ProcessExit += new EventHandler(CurrentDomain_ProcessExit);
+
+            foreach (string i in args)
             {
                 Console.WriteLine(i);
             }
@@ -54,7 +56,15 @@ namespace InputCollector
                 }
             }
 
-            Thread.CurrentThread.Join();         
+            Thread.CurrentThread.Join();
+        }
+
+        private static void CurrentDomain_ProcessExit(object sender, EventArgs e)
+        {
+            if (_collector != null)
+            {
+                _collector.Dispose();
+            }
         }
 
         private static bool Parse(string[] args)
@@ -116,7 +126,7 @@ namespace InputCollector
             {
                 _kh = new KeyboardHook();
                 _kh.KeyboardEvent += kh_KeyboardEvent;
-                _kh.SetHook();
+                _kh.Start();
             }       
         }
 

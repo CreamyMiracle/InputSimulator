@@ -1,0 +1,6 @@
+D:\Dev\InputCollector\InputCollector\InputCollector\obj\Debug\net48\InputCollector.csproj.SuggestedBindingRedirects.cache
+D:\Dev\InputCollector\InputCollector\InputCollector\obj\Debug\net48\InputCollector.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dev\InputCollector\InputCollector\InputCollector\obj\Debug\net48\InputCollector.AssemblyInfoInputs.cache
+D:\Dev\InputCollector\InputCollector\InputCollector\obj\Debug\net48\InputCollector.AssemblyInfo.cs
+D:\Dev\InputCollector\InputCollector\InputCollector\obj\Debug\net48\InputCollector.csproj.CoreCompileInputs.cache
+D:\Dev\InputCollector\InputCollector\InputCollector\obj\Debug\net48\InputCollector.csproj.AssemblyReference.cache

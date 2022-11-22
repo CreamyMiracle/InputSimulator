@@ -73,6 +73,16 @@ namespace InputCollector
         [DllImport("user32.dll")]
         public static extern int GetAsyncKeyState(Int32 i);
 
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool GetKeyboardState(byte[] lpKeyState);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
+        public static extern short GetKeyState(int vKey);
+
+        [DllImport("user32.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Unicode, EntryPoint = "MapVirtualKey", SetLastError = true, ThrowOnUnmappableChar = false)]
+        public static extern uint MapVirtualKey(uint uCode, uint uMapType);
+
 
 
         public static string GetActiveWindowTitle()

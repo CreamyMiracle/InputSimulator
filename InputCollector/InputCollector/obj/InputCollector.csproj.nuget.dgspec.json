@@ -1,29 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Dev\\InputCollector\\InputCollector\\InputCollector\\InputCollector.csproj": {}
+    "D:\\Dev\\InputCollector\\InputCollector\\InputCollector\\InputCollector.csproj": {}
   },
   "projects": {
-    "F:\\Dev\\InputCollector\\InputCollector\\InputCollector\\InputCollector.csproj": {
+    "D:\\Dev\\InputCollector\\InputCollector\\InputCollector\\InputCollector.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Dev\\InputCollector\\InputCollector\\InputCollector\\InputCollector.csproj",
+        "projectUniqueName": "D:\\Dev\\InputCollector\\InputCollector\\InputCollector\\InputCollector.csproj",
         "projectName": "InputCollector",
-        "projectPath": "F:\\Dev\\InputCollector\\InputCollector\\InputCollector\\InputCollector.csproj",
-        "packagesPath": "C:\\Users\\Rajala\\.nuget\\packages\\",
-        "outputPath": "F:\\Dev\\InputCollector\\InputCollector\\InputCollector\\obj\\",
+        "projectPath": "D:\\Dev\\InputCollector\\InputCollector\\InputCollector\\InputCollector.csproj",
+        "packagesPath": "C:\\Users\\JuhanaR\\.nuget\\packages\\",
+        "outputPath": "D:\\Dev\\InputCollector\\InputCollector\\InputCollector\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Rajala\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\JuhanaR\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,6 +43,18 @@
             "FluentCommandLineParser": {
               "target": "Package",
               "version": "[1.4.3, )"
+            },
+            "KeystrokeAPI": {
+              "target": "Package",
+              "version": "[1.0.6.4, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "SQLiteNetExtensions": {
+              "target": "Package",
+              "version": "[2.1.0, )"
             },
             "SQLiteNetExtensions.Async": {
               "target": "Package",

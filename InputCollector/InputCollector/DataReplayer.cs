@@ -1,5 +1,6 @@
 ﻿using InputCollector.Helpers;
 using InputCollector.Inputs;
+using InputCollector.Misc;
 using InputCollector.Model;
 using SQLite;
 using SQLiteNetExtensionsAsync.Extensions;
@@ -8,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using static InputCollector.Helpers.Constants;
 using static InputCollector.Program;
@@ -32,8 +34,13 @@ namespace InputCollector
             if (type == InputTypeMode.K || type == InputTypeMode.B)
             {
                 KeyboardEvents = await db_async.GetAllWithChildrenAsync<KeyboardEvent>();
+                foreach (KeyboardEvent e in KeyboardEvents)
+                {
+                    var options = new JsonSerializerOptions { IncludeFields = true };
+                    e.VirtualKeyCodes = JsonSerializer.Deserialize<List<int>>(e.VirtualKeyCodesBlob, options)!;
+                }
             }
-            
+
             AllEvents.AddRange(MouseEvents);
             AllEvents.AddRange(KeyboardEvents);
         }
@@ -69,7 +76,8 @@ namespace InputCollector
                 else if (input is KeyboardEvent)
                 {
                     KeyboardEvent kEvent = input as KeyboardEvent;
-                    KeyPress(kEvent.Key);
+                    Input[] inputs = Convert(kEvent.VirtualKeyCodes, kEvent.Type);
+                    Win32API.SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(Input)));
                 }
 
                 if (prev == DateTime.MinValue)
@@ -85,44 +93,36 @@ namespace InputCollector
                 await Task.Delay(diff);
             }
         }
-        public static void KeyPress(int keyCode)
+
+        #endregion
+
+        #region Private Methods
+        private static Input[] Convert(List<int> vkCodes, KeyEventType eventType)
         {
-            Input input = new Input
-            {
-                type = (int)InputType.Keyboard,
-                u = new InputUnion
-                {
-                    ki = new KeyboardInput
-                    {
-                        wVk = (ushort)keyCode,
-                        wScan = 0,
-                        dwFlags = 0, // if nothing, key down
-                        time = 0,
-                        dwExtraInfo = Win32API.GetMessageExtraInfo(),
-                    }
-                }
-            };
+            List<Input> inputs = new List<Input>();
 
-            Input input2 = new Input
+            foreach (int vk in vkCodes)
             {
-                type = (int)InputType.Keyboard,
-                u = new InputUnion
+                Input input = new Input()
                 {
-                    ki = new KeyboardInput
+                    u = new InputUnion()
                     {
-                        wVk = (ushort)keyCode,
-                        wScan = 0,
-                        dwFlags = 2, // key up
-                        time = 0,
-                        dwExtraInfo = Win32API.GetMessageExtraInfo(),
-                    }
-                }
-            };
+                        ki = new KeyboardInput()
+                        {
+                            wVk = 0,
+                            wScan = (ushort)Win32API.MapVirtualKey((uint)vk, 0),
+                            dwFlags = (uint)(eventType | KeyEventType.Scancode),
+                            dwExtraInfo = Win32API.GetMessageExtraInfo()
+                        }
+                    },
+                    type = 1
+                };
 
-            Input[] inputs = new Input[] { input, input2 }; // Combined, it's a keystroke
-            Win32API.SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(Input)));
+                inputs.Add(input);
+            }
+
+            return inputs.ToArray();
         }
-
         #endregion
 
         #region Private Fields

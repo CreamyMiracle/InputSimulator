@@ -129,7 +129,7 @@ namespace InputCollector.Helpers
         {
             get
             {
-                return "mouse_events_" + TimeExtensions.GetCurrentTimeStamp();
+                return "input_events_" + TimeExtensions.GetCurrentTimeStamp();
             }
         }
 

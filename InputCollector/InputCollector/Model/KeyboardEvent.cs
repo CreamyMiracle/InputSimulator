@@ -1,4 +1,7 @@
 ﻿using InputCollector.Inputs;
+using InputCollector.Misc;
+using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -13,13 +16,14 @@ namespace InputCollector.Model
     {
         public KeyboardEvent()
         {
-
-        }
-        public KeyboardEvent(int key)
-        {
-            Key = key;
             Timestamp = DateTime.UtcNow;
         }
-        public int Key { get; set; }
+
+        public KeyEventType Type { get; set; }
+
+        [Ignore]
+        public List<int> VirtualKeyCodes { get; set; } = new List<int>();
+
+        public string VirtualKeyCodesBlob { get; set; }
     }
 }
