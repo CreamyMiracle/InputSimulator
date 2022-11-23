@@ -40,11 +40,6 @@ namespace InputSimulator
         {
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(CurrentDomain_ProcessExit);
 
-            foreach (string i in args)
-            {
-                Console.WriteLine(i);
-            }
-
             if (Parse(args.Count() == 0 ? _debugArgs : args))
             {
                 Console.WriteLine("Process starts in {0} seconds", _startDelay);
@@ -118,7 +113,7 @@ namespace InputSimulator
             return _parsingOk;
         }
 
-        public static void Collect(string[] args)
+        private static void Collect(string[] args)
         {
             _collector = new DataCollector(_dbPath, _dbBatchSize);
 
@@ -139,7 +134,7 @@ namespace InputSimulator
             }
         }
 
-        public static async Task Replay(string[] args)
+        private static async Task Replay(string[] args)
         {
             _replayer = new DataReplayer(_dbPath);
 
