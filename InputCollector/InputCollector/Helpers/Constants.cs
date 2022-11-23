@@ -13,100 +13,6 @@ namespace InputCollector.Helpers
 {
     public static class Constants
     {
-        public enum MouseButton
-        {
-            None,
-            Left,
-            Right,
-            Middle,
-            Other,
-            WindowInit,
-        }
-
-        public enum MouseAction
-        {
-            //Primary actions
-            Move,
-            Up,
-            Down,
-            Scroll,
-            Other,
-            //Secondary actions
-            Click,
-            DoubleClick,
-            Drag,
-            WindowInit,
-        }
-
-        public static MouseEventFlag? ConvertMouseEventFlag(MouseEvent mEvent)
-        {
-            MouseButton btn = mEvent.Button;
-            MouseAction act = mEvent.Action;
-            int delta = mEvent.Delta;
-
-            if (btn == MouseButton.None)
-            {
-                switch (act)
-                {
-                    case MouseAction.Move:
-                        return MouseEventFlag.Move;
-                    default:
-                        throw new ArgumentException("Unknown button-action combination");
-                }
-            }
-            else if (btn == MouseButton.Left)
-            {
-                switch (act)
-                {
-                    case MouseAction.Down:
-                        return MouseEventFlag.LeftDown;
-                    case MouseAction.Up:
-                        return MouseEventFlag.LeftUp;
-                    default:
-                        throw new ArgumentException("Unknown button-action combination");
-                }
-            }
-            else if (btn == MouseButton.Right)
-            {
-                switch (act)
-                {
-                    case MouseAction.Down:
-                        return MouseEventFlag.RightDown;
-                    case MouseAction.Up:
-                        return MouseEventFlag.RightUp;
-                    default:
-                        throw new ArgumentException("Unknown button-action combination");
-                }
-            }
-            else if (btn == MouseButton.Middle)
-            {
-                switch (act)
-                {
-                    case MouseAction.Down:
-                        return MouseEventFlag.MiddleDown;
-                    case MouseAction.Up:
-                        return MouseEventFlag.MiddleUp;
-                    case MouseAction.Scroll:
-                        return MouseEventFlag.Wheel;
-                    default:
-                        throw new ArgumentException("Unknown button-action combination");
-                }
-            }
-            else if (btn == MouseButton.Other)
-            {
-                switch (act)
-                {
-                    case MouseAction.Down:
-                        return MouseEventFlag.XDown;
-                    case MouseAction.Up:
-                        return MouseEventFlag.XUp;
-                    default:
-                        throw new ArgumentException("Unknown button-action combination");
-                }
-            }
-            return null;
-        }
-
         public static Input ConvertMouseInput(MouseEvent mEvent, Func<IntPtr> extraInfo)
         {
             InputType _type = InputType.Mouse;
@@ -145,7 +51,7 @@ namespace InputCollector.Helpers
         {
             get
             {
-                return 0.1;
+                return 0.0;
             }
         }
     }

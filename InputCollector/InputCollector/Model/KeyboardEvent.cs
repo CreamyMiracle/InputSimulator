@@ -14,16 +14,19 @@ namespace InputCollector.Model
 {
     public class KeyboardEvent : InputEvent
     {
-        public KeyboardEvent()
+        public KeyboardEvent(int virtualCode, KeyEventType type)
         {
             Timestamp = DateTime.UtcNow;
+            VirtualKeyCode = virtualCode;
+            Type = type;
+        }
+        public KeyboardEvent()
+        {
+
         }
 
         public KeyEventType Type { get; set; }
 
-        [Ignore]
-        public List<int> VirtualKeyCodes { get; set; } = new List<int>();
-
-        public string VirtualKeyCodesBlob { get; set; }
+        public int VirtualKeyCode { get; set; }
     }
 }

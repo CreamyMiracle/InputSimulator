@@ -87,11 +87,6 @@ namespace InputCollector
 
         private async Task SaveKeyboardEventBatch()
         {
-            foreach(KeyboardEvent e in keyboardEventSaveBatch)
-            {
-                e.VirtualKeyCodesBlob = JsonSerializer.Serialize(e.VirtualKeyCodes);
-            }
-
             await db_async.InsertAllAsync(keyboardEventSaveBatch);
             totalEventsSaved += keyboardEventSaveBatch.Count;
             keyboardEventSaveBatch.Clear();

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using InputCollector.Flags;
 using InputCollector.Model;
 using static InputCollector.Helpers.Constants;
 
@@ -49,31 +50,31 @@ namespace InputCollector.Hooks
                     switch ((Int32)wParam)
                     {
                         case WM_MOUSEMOVE:
-                            e = new MouseEvent(MouseButton.None, MouseAction.Move, x, y, 0);
+                            e = new MouseEvent(MouseEventFlag.MoveNoCoalesce, x, y, 0);
                             break;
                         case WM_LBUTTONDOWN:
-                            e = new MouseEvent(MouseButton.Left, MouseAction.Down, x, y, 0);
+                            e = new MouseEvent(MouseEventFlag.LeftDown, x, y, 0);
                             break;
                         case WM_RBUTTONDOWN:
-                            e = new MouseEvent(MouseButton.Right, MouseAction.Down, x, y, 0);
+                            e = new MouseEvent(MouseEventFlag.RightDown, x, y, 0);
                             break;
                         case WM_MBUTTONDOWN:
-                            e = new MouseEvent(MouseButton.Middle, MouseAction.Down, x, y, 0);
+                            e = new MouseEvent(MouseEventFlag.MiddleDown, x, y, 0);
                             break;
                         case WM_LBUTTONUP:
-                            e = new MouseEvent(MouseButton.Left, MouseAction.Up, x, y, 0);
+                            e = new MouseEvent(MouseEventFlag.LeftUp, x, y, 0);
                             break;
                         case WM_RBUTTONUP:
-                            e = new MouseEvent(MouseButton.Right, MouseAction.Up, x, y, 0);
+                            e = new MouseEvent(MouseEventFlag.RightUp, x, y, 0);
                             break;
                         case WM_MBUTTONUP:
-                            e = new MouseEvent(MouseButton.Middle, MouseAction.Up, x, y, 0);
+                            e = new MouseEvent(MouseEventFlag.MiddleUp, x, y, 0);
                             break;
                         case WM_MBUTTONROLL:
-                            e = new MouseEvent(MouseButton.Middle, MouseAction.Scroll, x, y, 120);
+                            e = new MouseEvent(MouseEventFlag.Wheel, x, y, 120);
                             break;
                         default:
-                            e = new MouseEvent(MouseButton.Other, MouseAction.Other, x, y, 0);
+                            Console.WriteLine("Unknown mouse event");
                             break;
                     }
                     MouseEvent(this, e);

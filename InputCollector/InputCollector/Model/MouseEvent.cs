@@ -1,4 +1,5 @@
-﻿using InputCollector.Inputs;
+﻿using InputCollector.Flags;
+using InputCollector.Inputs;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -15,17 +16,15 @@ namespace InputCollector.Model
         {
 
         }
-        public MouseEvent(MouseButton button, MouseAction action, int x, int y, int delta)
+        public MouseEvent(MouseEventFlag type, int x, int y, int delta)
         {
-            Button = button;
-            Action = action;
+            Type = type;
             X = x;
             Y = y;
             Delta = delta;
             Timestamp = DateTime.UtcNow;
         }
-        public MouseButton Button { get; set; }
-        public MouseAction Action { get; set; }
+        public MouseEventFlag Type { get; set; }
         public int Delta { get; set; }
         public int X { get; set; }
         public int Y { get; set; }

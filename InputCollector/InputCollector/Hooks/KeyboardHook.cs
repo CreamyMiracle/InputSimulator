@@ -197,40 +197,14 @@ namespace InputCollector.Hooks
 
                 //raise KeyDown
                 if (KeyboardEvent != null && (wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN))
-                {
-                    int vk = MyKeyboardHookStruct.vkCode;
-
-                    KeyboardEvent e = new KeyboardEvent();
-
-                    e.Type = KeyEventType.KeyDown;
-                    e.VirtualKeyCodes.Add(vk);
-                    if ((Win32API.GetKeyState(VK_SHIFT) & 0x80) == 0x80)
-                    {
-                        e.VirtualKeyCodes.Add(VK_SHIFT);
-                    }
-
-                    if ((Win32API.GetKeyState(VK_CONTROL) & 0x80) == 0x80)
-                    {
-                        e.VirtualKeyCodes.Add(VK_CONTROL);
-                    }
-
-                    if ((Win32API.GetKeyState(VK_MENU) & 0x80) == 0x80)
-                    {
-                        e.VirtualKeyCodes.Add(VK_MENU);
-                    }
-
-                    KeyboardEvent(this, e);
+                {                   
+                    KeyboardEvent(this, new KeyboardEvent(MyKeyboardHookStruct.vkCode, KeyEventType.KeyDown));
                 }
 
                 // raise KeyUp
                 if (KeyboardEvent != null && (wParam == WM_KEYUP || wParam == WM_SYSKEYUP))
                 {
-                    int vk = MyKeyboardHookStruct.vkCode;
-                    KeyboardEvent e = new KeyboardEvent();
-                    e.Type = KeyEventType.KeyUp;
-                    e.VirtualKeyCodes.Add(vk);
-
-                    KeyboardEvent(this, e);
+                    KeyboardEvent(this, new KeyboardEvent(MyKeyboardHookStruct.vkCode, KeyEventType.KeyUp));
                 }
             }
 
