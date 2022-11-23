@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X3POuc+6f7VtAOsb71wFq077fFU1tf14KCTA6yapna7AYUgKTjCz8P8OdGQa5UIDZBwQU5sJqkYMYlmzG1RNIQ==",
+  "dgSpecHash": "SDhtrx0R+7yyhCVHLdH8EqMsgGTkb+AS91E1SFeYAGJwIpnBFG7qXn+d0DI9x/dfUKHoIMWiLS6QRGy7HIfmng==",
   "success": true,
-  "projectFilePath": "D:\\Dev\\InputCollector\\InputSimulator\\InputSimulator\\InputSimulator.csproj",
+  "projectFilePath": "D:\\Dev\\InputSimulator\\InputSimulator\\InputSimulator\\InputSimulator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JuhanaR\\.nuget\\packages\\fluentcommandlineparser\\1.4.3\\fluentcommandlineparser.1.4.3.nupkg.sha512",
     "C:\\Users\\JuhanaR\\.nuget\\packages\\keystrokeapi\\1.0.6.4\\keystrokeapi.1.0.6.4.nupkg.sha512",

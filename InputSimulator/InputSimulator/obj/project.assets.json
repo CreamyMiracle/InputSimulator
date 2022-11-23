@@ -425,11 +425,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dev\\InputCollector\\InputSimulator\\InputSimulator\\InputSimulator.csproj",
+      "projectUniqueName": "D:\\Dev\\InputSimulator\\InputSimulator\\InputSimulator\\InputSimulator.csproj",
       "projectName": "InputSimulator",
-      "projectPath": "D:\\Dev\\InputCollector\\InputSimulator\\InputSimulator\\InputSimulator.csproj",
+      "projectPath": "D:\\Dev\\InputSimulator\\InputSimulator\\InputSimulator\\InputSimulator.csproj",
       "packagesPath": "C:\\Users\\JuhanaR\\.nuget\\packages\\",
-      "outputPath": "D:\\Dev\\InputCollector\\InputSimulator\\InputSimulator\\obj\\",
+      "outputPath": "D:\\Dev\\InputSimulator\\InputSimulator\\InputSimulator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\JuhanaR\\AppData\\Roaming\\NuGet\\NuGet.Config",
