@@ -26,8 +26,10 @@ namespace InputCollector
         }
 
         #region Public Methods
-        public async Task ReadEvents(InputTypeMode type)
+        public async Task<DateTime> ReadEvents(InputTypeMode type)
         {
+            DateTime replayStart = DateTime.UtcNow;
+
             if (type == InputTypeMode.M || type == InputTypeMode.B)
             {
                 MouseEvents = await db_async.GetAllWithChildrenAsync<MouseEvent>();
@@ -40,17 +42,18 @@ namespace InputCollector
 
             AllEvents.AddRange(MouseEvents);
             AllEvents.AddRange(KeyboardEvents);
+
+            return replayStart;
         }
 
-        public async Task ReplayEvents()
+        public async Task<DateTime> ReplayEvents()
         {
             List<InputEvent> orderedEvents = AllEvents.OrderBy(e => e.Timestamp).ToList();
+
             DateTime prevEventTime = DateTime.MinValue;
             DateTime loopTime = DateTime.UtcNow;
 
-            DateTime loopStart = DateTime.UtcNow;
-            PeriodicTimer periodicTimer = null;
-
+            DateTime replayStart = DateTime.UtcNow;
             foreach (InputEvent input in orderedEvents)
             {
                 loopTime = DateTime.UtcNow;
@@ -96,7 +99,8 @@ namespace InputCollector
 
                 NOP(wait.TotalSeconds);
             }
-            Console.WriteLine((DateTime.UtcNow - loopStart).TotalSeconds);
+
+            return replayStart;
         }
         #endregion
 

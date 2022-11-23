@@ -135,8 +135,12 @@ namespace InputCollector
             Console.WriteLine("Replaying mouse events from '{0}'", _dbPath);
 
             _replayer = new DataReplayer(_dbPath);
-            await _replayer.ReadEvents(_type);
-            await _replayer.ReplayEvents();
+
+            DateTime readStart = await _replayer.ReadEvents(_type);
+            Console.WriteLine("Reading events from '{0}' took '{1}'", _dbPath, (DateTime.UtcNow - readStart));
+
+            DateTime replayStart = await _replayer.ReplayEvents();
+            Console.WriteLine("Replaying events from '{0}' took '{1}'", _dbPath, (DateTime.UtcNow - replayStart));
         }
 
         #region Mouse stuff
