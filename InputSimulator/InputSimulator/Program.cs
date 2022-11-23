@@ -18,7 +18,7 @@ namespace InputSimulator
         private static int _startDelay = Constants.DefaultStartDelaySeconds;
         private static Mode _mode = Mode.C;
         private static InputTypeMode _type = InputTypeMode.B;
-        private static string[] _debugArgs = new string[] { "-m", "C", "-t", "B" };
+        private static string[] _debugArgs = new string[] { "-m", "R", "-t", "B" };
 
         private static bool _parsingOk = true;
 
@@ -148,6 +148,8 @@ namespace InputSimulator
 
             DateTime replayStart = await _replayer.ReplayEvents();
             Console.WriteLine("Replaying events from '{0}' took '{1}'", _dbPath, (DateTime.UtcNow - replayStart));
+
+            Environment.Exit(0);
         }
 
         #region Mouse stuff
