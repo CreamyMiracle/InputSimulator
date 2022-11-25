@@ -17,12 +17,6 @@ namespace InputSimulator
         int totalEventsSaved = 0;
         public DataCollector(string dbPath, int _batchSize)
         {
-            FileInfo file = new FileInfo(dbPath);
-            if (file.Exists)
-            {
-                throw new IOException("File already exists");
-            }
-
             batchSize = _batchSize;
             Task.Run(async () => { db_async = await InitDatabase(dbPath); }).Wait();
         }

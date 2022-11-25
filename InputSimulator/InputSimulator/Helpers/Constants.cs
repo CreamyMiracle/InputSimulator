@@ -35,7 +35,7 @@ namespace InputSimulator.Helpers
         {
             get
             {
-                return "events_" + TimeExtensions.GetCurrentTimeStamp();
+                return "events_" + TimeExtensions.GetCurrentTimeStamp() + ".db";
             }
         }
 
@@ -51,7 +51,23 @@ namespace InputSimulator.Helpers
         {
             get
             {
-                return 5;
+                return 2;
+            }
+        }
+
+        public static List<int> DefaultQuitVirtualKeys
+        {
+            get
+            {
+                return new List<int>() { 19, 145 }; // 44 print screen
+            }
+        }
+
+        public static List<int> DefaultScreenShotVirtualKeys
+        {
+            get
+            {
+                return new List<int>() { 19, 44 }; // 91, 44 print screen
             }
         }
 

@@ -1,29 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Dev\\InputSimulator\\InputSimulator\\InputSimulator\\InputSimulator.csproj": {}
+    "D:\\Dev\\InputSimulator\\InputSimulator\\InputSimulator\\InputSimulator.csproj": {}
   },
   "projects": {
-    "F:\\Dev\\InputSimulator\\InputSimulator\\InputSimulator\\InputSimulator.csproj": {
+    "D:\\Dev\\InputSimulator\\InputSimulator\\InputSimulator\\InputSimulator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Dev\\InputSimulator\\InputSimulator\\InputSimulator\\InputSimulator.csproj",
+        "projectUniqueName": "D:\\Dev\\InputSimulator\\InputSimulator\\InputSimulator\\InputSimulator.csproj",
         "projectName": "InputSimulator",
-        "projectPath": "F:\\Dev\\InputSimulator\\InputSimulator\\InputSimulator\\InputSimulator.csproj",
-        "packagesPath": "C:\\Users\\Rajala\\.nuget\\packages\\",
-        "outputPath": "F:\\Dev\\InputSimulator\\InputSimulator\\InputSimulator\\obj\\",
+        "projectPath": "D:\\Dev\\InputSimulator\\InputSimulator\\InputSimulator\\InputSimulator.csproj",
+        "packagesPath": "C:\\Users\\JuhanaR\\.nuget\\packages\\",
+        "outputPath": "D:\\Dev\\InputSimulator\\InputSimulator\\InputSimulator\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Rajala\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\JuhanaR\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -62,6 +60,10 @@
               "target": "Package",
               "version": "[2.1.0, )"
             },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.8.116, )"
@@ -80,6 +82,9 @@
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.111\\RuntimeIdentifierGraph.json"

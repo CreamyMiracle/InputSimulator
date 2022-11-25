@@ -76,3 +76,7 @@ D:\Dev\InputSimulator\InputSimulator\InputSimulator\obj\Debug\net6.0\InputSimula
 D:\Dev\InputSimulator\InputSimulator\InputSimulator\obj\Debug\net6.0\ref\InputSimulator.dll
 D:\Dev\InputSimulator\InputSimulator\InputSimulator\obj\Debug\net6.0\InputSimulator.pdb
 D:\Dev\InputSimulator\InputSimulator\InputSimulator\obj\Debug\net6.0\InputSimulator.genruntimeconfig.cache
+D:\Dev\InputSimulator\InputSimulator\InputSimulator\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Dev\InputSimulator\InputSimulator\InputSimulator\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Dev\InputSimulator\InputSimulator\InputSimulator\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Dev\InputSimulator\InputSimulator\InputSimulator\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll

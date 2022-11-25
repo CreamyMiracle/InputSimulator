@@ -22,12 +22,6 @@ namespace InputSimulator
     {
         public DataReplayer(string dbPath)
         {
-            FileInfo file = new FileInfo(dbPath);
-            if(!file.Exists)
-            {
-                throw new FileNotFoundException("File not found", dbPath);
-            }
-
             db_async = new SQLiteAsyncConnection(dbPath);
         }
 
